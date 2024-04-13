@@ -7,9 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,7 +20,7 @@ public class ModEvents {
     public static class ForgeEvents {
         @SubscribeEvent
         public static void onLivingDamage(LivingDamageEvent event){
-            if (event.getSource().getEntity() != null && event.getSource().getEntity() instanceof Player player) {
+            if (event.getSource().getEntity() instanceof Player player) {
                 LivingEntity pTarget = event.getEntity();
                 if (player.getMainHandItem().is(ModItems.DAGGEROFBLOODLETTING.get())) {
                     ResourceLocation id = ForgeRegistries.ENTITY_TYPES.getKey(pTarget.getType());
