@@ -8,9 +8,11 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.apache.logging.log4j.core.net.Priority;
 import wayoftime.bloodmagic.impl.BloodMagicAPI;
 import wayoftime.bloodmagic.util.helper.PlayerSacrificeHelper;
 
@@ -18,7 +20,7 @@ public class ModEvents {
 
     @Mod.EventBusSubscriber(modid = Dagger_Of_Bloodletting.MODID)
     public static class ForgeEvents {
-        @SubscribeEvent
+        @SubscribeEvent(priority = EventPriority.LOWEST)
         public static void onLivingDamage(LivingDamageEvent event){
             if (event.getSource().getEntity() instanceof Player player) {
                 LivingEntity pTarget = event.getEntity();
