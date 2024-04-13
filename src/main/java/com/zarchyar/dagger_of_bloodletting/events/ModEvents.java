@@ -1,6 +1,7 @@
 package com.zarchyar.dagger_of_bloodletting.events;
 
 import com.zarchyar.dagger_of_bloodletting.Dagger_Of_Bloodletting;
+import com.zarchyar.dagger_of_bloodletting.CommonConfig;
 import com.zarchyar.dagger_of_bloodletting.item.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -12,7 +13,6 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.apache.logging.log4j.core.net.Priority;
 import wayoftime.bloodmagic.impl.BloodMagicAPI;
 import wayoftime.bloodmagic.util.helper.PlayerSacrificeHelper;
 
@@ -28,7 +28,7 @@ public class ModEvents {
                     ResourceLocation id = ForgeRegistries.ENTITY_TYPES.getKey(pTarget.getType());
                     int lifeEssenceRatio = (Integer) BloodMagicAPI.INSTANCE.getValueManager().getSacrificial().getOrDefault(id, 25);
                     if (!(lifeEssenceRatio <= 0)){
-                        int lifeEssence = (int)((float)lifeEssenceRatio * event.getAmount());
+                        int lifeEssence = (int)((float)lifeEssenceRatio * event.getAmount() * CommonConfig.lpmulti);
                         if (event.getEntity().isBaby()) {
                             lifeEssence = (int)((float)lifeEssence * 0.5F);
                         }
