@@ -150,7 +150,8 @@ dependencies {
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    implementation fg.deobf("curse.maven:bloodmagic-224791:${blood_magic_version}")
+    compileOnly "curse.maven:bloodmagic-224791:${blood_magic_version}-sources-api"
+    runtimeOnly fg.deobf("curse.maven:bloodmagic-224791:${blood_magic_version}")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

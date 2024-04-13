@@ -1,6 +1,7 @@
 package com.zarchyar.dagger_of_bloodletting;
 
 import com.mojang.logging.LogUtils;
+import com.zarchyar.dagger_of_bloodletting.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -17,14 +18,14 @@ import org.slf4j.Logger;
 @Mod(Dagger_Of_Bloodletting.MODID)
 public class Dagger_Of_Bloodletting {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "zarchyars_caves";
+    public static final String MODID = "dagger_of_bloodletting";
     private static final Logger LOGGER = LogUtils.getLogger();
     public Dagger_Of_Bloodletting() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
 
-
-
+        ModCreativeModeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
