@@ -11,7 +11,7 @@ public class CommonConfig {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
     private static final ForgeConfigSpec.DoubleValue LPMULTI = BUILDER
-            .comment("Value to multiply lp created by the Dagger of Bloodletting by")
+            .comment("Multiplier to the amount of lp created by the Dagger of Bloodletting")
             .comment("Values less then 1 will result in less LP, values greater then 1 result in more LP.")
             .defineInRange("LPMulti", 1.0D, 0.0D, Double.MAX_VALUE);
 
