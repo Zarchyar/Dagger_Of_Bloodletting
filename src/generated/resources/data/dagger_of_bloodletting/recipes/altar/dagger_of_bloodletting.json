@@ -1,0 +1,14 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 3000,
+  "consumptionRate": 5,
+  "drainRate": 5,
+  "input": {
+    "item": "bloodmagic:sacrificialdagger"
+  },
+  "output": {
+    "item": "dagger_of_bloodletting:daggerofbloodletting",
+    "nbt": "{Damage:0}"
+  },
+  "upgradeLevel": 1
+}

@@ -1,6 +1,7 @@
 package com.zarchyar.dagger_of_bloodletting.datagen;
 
 import com.zarchyar.dagger_of_bloodletting.Dagger_Of_Bloodletting;
+import com.zarchyar.dagger_of_bloodletting.datagen.bloodmagic.BloodAltarRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -21,5 +22,6 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeServer(), new BloodAltarRecipeProvider(packOutput));
     }
 }
