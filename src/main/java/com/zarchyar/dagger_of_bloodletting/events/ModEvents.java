@@ -1,12 +1,14 @@
 package com.zarchyar.dagger_of_bloodletting.events;
 
 import com.zarchyar.dagger_of_bloodletting.Dagger_Of_Bloodletting;
+import com.zarchyar.dagger_of_bloodletting.item.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -19,10 +21,10 @@ public class ModEvents {
     @Mod.EventBusSubscriber(modid = Dagger_Of_Bloodletting.MODID)
     public static class ForgeEvents {
         @SubscribeEvent
-        public static void onLivingHurt(LivingHurtEvent event){
+        public static void onLivingDamage(LivingDamageEvent event){
             if (event.getSource().getEntity() != null && event.getSource().getEntity() instanceof Player player) {
                 LivingEntity pTarget = event.getEntity();
-                if (player.getMainHandItem().is(Items.IRON_SWORD)) {
+                if (player.getMainHandItem().is(ModItems.DAGGEROFBLOODLETTING.get())) {
                     ResourceLocation id = ForgeRegistries.ENTITY_TYPES.getKey(pTarget.getType());
                     int lifeEssenceRatio = (Integer) BloodMagicAPI.INSTANCE.getValueManager().getSacrificial().getOrDefault(id, 25);
                     if (!(lifeEssenceRatio <= 0)){
