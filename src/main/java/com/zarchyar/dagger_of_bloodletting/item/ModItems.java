@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import wayoftime.bloodmagic.common.item.soul.ItemSentientSword;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Dagger_Of_Bloodletting.MODID);
@@ -16,4 +17,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> DAGGEROFBLOODLETTING = ITEMS.register("daggerofbloodletting",
             ()-> new SwordItem(ModToolTiers.BLOODLETTING, 3, -2.4F, new Item.Properties()));
+
+    public static final RegistryObject<Item> SFBLDAGGER = ITEMS.register("sfbldagger",
+            ()-> new ItemSentientSword());
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dagger_of_bloodletting:item/sfbldagger_deactivated"
+  }
+}

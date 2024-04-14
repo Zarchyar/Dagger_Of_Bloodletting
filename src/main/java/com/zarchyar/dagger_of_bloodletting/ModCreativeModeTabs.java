@@ -21,5 +21,6 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.daggerofbloodlettingtab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.DAGGEROFBLOODLETTING.get());
+                        output.accept(ModItems.SFBLDAGGER.get());
                     }).build());
 }

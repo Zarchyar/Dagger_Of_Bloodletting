@@ -1,6 +1,7 @@
 package com.zarchyar.dagger_of_bloodletting;
 
 import com.mojang.logging.LogUtils;
+import com.zarchyar.dagger_of_bloodletting.events.ClientEvents;
 import com.zarchyar.dagger_of_bloodletting.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -49,6 +50,7 @@ public class Dagger_Of_Bloodletting {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ClientEvents.initClientEvents(event);
         }
     }
 }

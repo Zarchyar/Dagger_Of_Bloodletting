@@ -24,13 +24,19 @@ public class ModEvents {
         public static void onLivingDamage(LivingDamageEvent event){
             if (event.getSource().getEntity() instanceof Player player) {
                 LivingEntity pTarget = event.getEntity();
-                if (player.getMainHandItem().is(ModItems.DAGGEROFBLOODLETTING.get())) {
+                if (player.getMainHandItem().is(ModItems.DAGGEROFBLOODLETTING.get()) || player.getMainHandItem().is(ModItems.SFBLDAGGER.get())) {
                     ResourceLocation id = ForgeRegistries.ENTITY_TYPES.getKey(pTarget.getType());
                     int lifeEssenceRatio = (Integer) BloodMagicAPI.INSTANCE.getValueManager().getSacrificial().getOrDefault(id, 25);
                     if (!(lifeEssenceRatio <= 0)){
-                        int lifeEssence = (int)((float)lifeEssenceRatio * event.getAmount() * CommonConfig.lpmulti);
+                        int lifeEssence = (int)((float)lifeEssenceRatio * event.getAmount());
                         if (event.getEntity().isBaby()) {
                             lifeEssence = (int)((float)lifeEssence * 0.5F);
+                        }
+                        if (player.getMainHandItem().is(ModItems.DAGGEROFBLOODLETTING.get())){
+                            lifeEssence = (int)((float)lifeEssence * CommonConfig.lpmulti);
+                        }
+                        if (player.getMainHandItem().is(ModItems.SFBLDAGGER.get())){
+                            lifeEssence = (int)((float)lifeEssence * CommonConfig.lpmulti);
                         }
                         if (PlayerSacrificeHelper.findAndFillAltar(player.getCommandSenderWorld(), pTarget, lifeEssence, true)) {
                             pTarget.getCommandSenderWorld().playSound((Player)null, pTarget.getX(), pTarget.getY(), pTarget.getZ(), SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (pTarget.getCommandSenderWorld().random.nextFloat() - pTarget.getCommandSenderWorld().random.nextFloat()) * 0.8F);

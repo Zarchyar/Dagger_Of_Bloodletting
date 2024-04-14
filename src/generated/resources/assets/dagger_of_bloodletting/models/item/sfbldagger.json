@@ -1,0 +1,74 @@
+{
+  "overrides": [
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_deactivated",
+      "predicate": {
+        "bloodmagic:active": 0.0,
+        "bloodmagic:type": 0.0
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_corrosive_deactivated",
+      "predicate": {
+        "bloodmagic:active": 0.0,
+        "bloodmagic:type": 1.0
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_destructive_deactivated",
+      "predicate": {
+        "bloodmagic:active": 0.0,
+        "bloodmagic:type": 2.0
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_vengeful_deactivated",
+      "predicate": {
+        "bloodmagic:active": 0.0,
+        "bloodmagic:type": 3.0
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_steadfast_deactivated",
+      "predicate": {
+        "bloodmagic:active": 0.0,
+        "bloodmagic:type": 4.0
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_activated",
+      "predicate": {
+        "bloodmagic:active": 1.0,
+        "bloodmagic:type": 0.0
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_corrosive_activated",
+      "predicate": {
+        "bloodmagic:active": 1.0,
+        "bloodmagic:type": 1.0
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_destructive_activated",
+      "predicate": {
+        "bloodmagic:active": 1.0,
+        "bloodmagic:type": 2.0
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_vengeful_activated",
+      "predicate": {
+        "bloodmagic:active": 1.0,
+        "bloodmagic:type": 3.0
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/sfbldagger_steadfast_activated",
+      "predicate": {
+        "bloodmagic:active": 1.0,
+        "bloodmagic:type": 4.0
+      }
+    }
+  ]
+}
