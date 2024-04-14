@@ -10,7 +10,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import wayoftime.bloodmagic.BloodMagic;
 import wayoftime.bloodmagic.altar.AltarTier;
 import wayoftime.bloodmagic.common.data.recipe.builder.BloodAltarRecipeBuilder;
 import wayoftime.bloodmagic.common.data.recipe.builder.TartaricForgeRecipeBuilder;
