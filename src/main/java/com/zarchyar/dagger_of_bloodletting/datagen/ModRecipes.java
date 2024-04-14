@@ -28,7 +28,7 @@ public class ModRecipes extends RecipeProvider implements IConditionBuilder {
         String forgePath = "soulforge/";
         String altarPath = "altar/";
         BloodAltarRecipeBuilder.altar(Ingredient.of(BloodMagicItems.SACRIFICIAL_DAGGER.get()), new ItemStack(ModItems.DAGGEROFBLOODLETTING.get()), AltarTier.TWO.ordinal(), 3000, 5, 5).build(consumer, new ResourceLocation(Dagger_Of_Bloodletting.MODID, altarPath + "dagger_of_bloodletting"));
-        TartaricForgeRecipeBuilder.tartaricForge(new ItemStack(ModItems.SFBLDAGGER.get()), 1000, 250, Ingredient.of(ModItems.DAGGEROFBLOODLETTING.get()), Ingredient.of(Items.NETHERITE_SCRAP), Ingredient.of(BloodMagicItems.COMMON_GEM.get())).build(consumer, new ResourceLocation(Dagger_Of_Bloodletting.MODID, forgePath + "sfbldagger"));
+        TartaricForgeRecipeBuilder.tartaricForge(new ItemStack(ModItems.SFBLDAGGER.get()), 1000, 250, Ingredient.of(ModItems.DAGGEROFBLOODLETTING.get()), Ingredient.of(Items.NETHERITE_SCRAP), Ingredient.of(BloodMagicItems.COMMON_GEM.get()), Ingredient.of(BloodMagicItems.SENTIENT_SWORD.get())).build(consumer, new ResourceLocation(Dagger_Of_Bloodletting.MODID, forgePath + "sfbldagger"));
 
     }
 }

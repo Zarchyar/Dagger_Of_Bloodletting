@@ -10,6 +10,9 @@
   "input2": {
     "item": "bloodmagic:soulgemcommon"
   },
+  "input3": {
+    "item": "bloodmagic:soulsword"
+  },
   "minimumDrain": 1000.0,
   "output": {
     "item": "dagger_of_bloodletting:sfbldagger",
