@@ -12,12 +12,12 @@ public class CommonConfig {
 
     private static final ForgeConfigSpec.DoubleValue LPMULTI = BUILDER
             .comment("Multiplier to the amount of lp created by the Dagger of Bloodletting")
-            .comment("Values less then 1 will result in less LP, values greater then 1 result in more LP.")
+            .comment("Values less then 1 will result in less LP, values greater than 1 result in more LP.")
             .defineInRange("LPMulti", 1.0D, 0.0D, Double.MAX_VALUE);
 
     private static final ForgeConfigSpec.DoubleValue SFLPMULTI = BUILDER
             .comment("Multiplier to the amount of lp created by the Sentient Dagger of Bloodletting")
-            .comment("Values less then 1 will result in less LP, values greater then 1 result in more LP.")
+            .comment("Values less then 1 will result in less LP, values greater than 1 result in more LP.")
             .defineInRange("sentientLPMulti", 0.8D, 0.0D, Double.MAX_VALUE);
     static final ForgeConfigSpec SPEC = BUILDER.build();
     public static Double lpmulti;

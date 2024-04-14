@@ -36,7 +36,7 @@ public class ModEvents {
                             lifeEssence = (int)((float)lifeEssence * CommonConfig.lpmulti);
                         }
                         if (player.getMainHandItem().is(ModItems.SFBLDAGGER.get())){
-                            lifeEssence = (int)((float)lifeEssence * CommonConfig.lpmulti);
+                            lifeEssence = (int)((float)lifeEssence * CommonConfig.slpmulti);
                         }
                         if (PlayerSacrificeHelper.findAndFillAltar(player.getCommandSenderWorld(), pTarget, lifeEssence, true)) {
                             pTarget.getCommandSenderWorld().playSound((Player)null, pTarget.getX(), pTarget.getY(), pTarget.getZ(), SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (pTarget.getCommandSenderWorld().random.nextFloat() - pTarget.getCommandSenderWorld().random.nextFloat()) * 0.8F);
