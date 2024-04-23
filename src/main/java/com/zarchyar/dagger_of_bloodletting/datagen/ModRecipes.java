@@ -2,6 +2,7 @@ package com.zarchyar.dagger_of_bloodletting.datagen;
 
 import com.zarchyar.dagger_of_bloodletting.Dagger_Of_Bloodletting;
 import com.zarchyar.dagger_of_bloodletting.item.ModItems;
+import com.zarchyar.dagger_of_bloodletting.recipe.OrbDaggerBindRecipe;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;

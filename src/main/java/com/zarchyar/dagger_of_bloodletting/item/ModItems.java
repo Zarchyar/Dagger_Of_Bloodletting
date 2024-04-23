@@ -20,4 +20,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> SFBLDAGGER = ITEMS.register("sfbldagger",
             ()-> new ItemSentientSword());
+
+    public static final RegistryObject<Item> DAGGEROFORB = ITEMS.register("daggeroforb",
+            ()-> new SwordItem(ModToolTiers.BLOODLETTING, 3, -2.4F, new Item.Properties()));
 }

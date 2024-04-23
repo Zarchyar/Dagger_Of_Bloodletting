@@ -3,6 +3,7 @@ package com.zarchyar.dagger_of_bloodletting;
 import com.mojang.logging.LogUtils;
 import com.zarchyar.dagger_of_bloodletting.events.ClientEvents;
 import com.zarchyar.dagger_of_bloodletting.item.ModItems;
+import com.zarchyar.dagger_of_bloodletting.recipe.ModRecipes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -29,6 +30,8 @@ public class Dagger_Of_Bloodletting {
 
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
