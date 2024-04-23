@@ -37,11 +37,11 @@ public class OrbDaggerBindRecipe extends CustomRecipe {
             if (!itemStack.isEmpty()){
                 list.add(itemStack);
                 if (list.size() > 2) {return false;}
-                if (list.size() > 1){
-                    if ((orbIngredient.test(list.get(0)) ^ orbIngredient.test(list.get(1))) && ((input.test(list.get(0))) ^ (input.test(list.get(1))))){
-                        return true;
-                    }
-                }
+            }
+        }
+        if (list.size() == 2){
+            if ((orbIngredient.test(list.get(0)) ^ orbIngredient.test(list.get(1))) && ((input.test(list.get(0))) ^ (input.test(list.get(1))))){
+                return true;
             }
         }
         return false;
