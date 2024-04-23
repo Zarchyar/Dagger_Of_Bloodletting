@@ -24,9 +24,9 @@ public class DOBLEvents {
         public static void onLivingDamage(LivingDamageEvent event){
             if (event.getSource().getEntity() instanceof Player player) {
                 LivingEntity pTarget = event.getEntity();
+                ResourceLocation id = ForgeRegistries.ENTITY_TYPES.getKey(pTarget.getType());
+                int lifeEssenceRatio = (Integer) BloodMagicAPI.INSTANCE.getValueManager().getSacrificial().getOrDefault(id, 25);
                 if (player.getMainHandItem().is(DOBLItems.DAGGEROFBLOODLETTING.get()) || player.getMainHandItem().is(DOBLItems.SFBLDAGGER.get())) {
-                    ResourceLocation id = ForgeRegistries.ENTITY_TYPES.getKey(pTarget.getType());
-                    int lifeEssenceRatio = (Integer) BloodMagicAPI.INSTANCE.getValueManager().getSacrificial().getOrDefault(id, 25);
                     if (!(lifeEssenceRatio <= 0)){
                         int lifeEssence = (int)((float)lifeEssenceRatio * event.getAmount());
                         if (event.getEntity().isBaby()) {
@@ -42,6 +42,8 @@ public class DOBLEvents {
                             pTarget.getCommandSenderWorld().playSound((Player)null, pTarget.getX(), pTarget.getY(), pTarget.getZ(), SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (pTarget.getCommandSenderWorld().random.nextFloat() - pTarget.getCommandSenderWorld().random.nextFloat()) * 0.8F);
                         }
                     }
+                }
+                if (player.getMainHandItem().is(DOBLItems.DAGGEROFORB.get())) {
 
                 }
             }

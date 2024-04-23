@@ -22,5 +22,5 @@ public class DOBLItems {
             ()-> new ItemSentientSword());
 
     public static final RegistryObject<Item> DAGGEROFORB = ITEMS.register("daggeroforb",
-            ()-> new SwordItem(DOBLToolTiers.BLOODLETTING, 3, -2.4F, new Item.Properties()));
+            ()-> new DaggerOfOrbItem(DOBLToolTiers.BLOODLETTING, 3, -2.4F, new Item.Properties()));
 }
