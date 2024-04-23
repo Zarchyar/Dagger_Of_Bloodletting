@@ -12,7 +12,7 @@ import wayoftime.bloodmagic.common.item.BloodMagicItems;
 
 import java.util.List;
 
-public class ModToolTiers {
+public class DOBLToolTiers {
     public static final Tier BLOODLETTING = TierSortingRegistry.registerTier(
             new ForgeTier(2, 500, 6.0F, 2.0F, 20,
                     BlockTags.NEEDS_IRON_TOOL, ()-> {return Ingredient.of(BloodMagicItems.IMBUED_SLATE.get());}),

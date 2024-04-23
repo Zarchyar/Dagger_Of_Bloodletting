@@ -1,8 +1,7 @@
 package com.zarchyar.dagger_of_bloodletting.datagen;
 
 import com.zarchyar.dagger_of_bloodletting.Dagger_Of_Bloodletting;
-import com.zarchyar.dagger_of_bloodletting.item.ModItems;
-import com.zarchyar.dagger_of_bloodletting.recipe.OrbDaggerBindRecipe;
+import com.zarchyar.dagger_of_bloodletting.item.DOBLItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -18,8 +17,8 @@ import wayoftime.bloodmagic.common.item.BloodMagicItems;
 
 import java.util.function.Consumer;
 
-public class ModRecipes extends RecipeProvider implements IConditionBuilder {
-    public ModRecipes(PackOutput pOutput) {
+public class DOBLRecipes extends RecipeProvider implements IConditionBuilder {
+    public DOBLRecipes(PackOutput pOutput) {
         super(pOutput);
     }
 
@@ -27,8 +26,8 @@ public class ModRecipes extends RecipeProvider implements IConditionBuilder {
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         String forgePath = "soulforge/";
         String altarPath = "altar/";
-        BloodAltarRecipeBuilder.altar(Ingredient.of(BloodMagicItems.SACRIFICIAL_DAGGER.get()), new ItemStack(ModItems.DAGGEROFBLOODLETTING.get()), AltarTier.TWO.ordinal(), 3000, 5, 5).build(consumer, new ResourceLocation(Dagger_Of_Bloodletting.MODID, altarPath + "dagger_of_bloodletting"));
-        TartaricForgeRecipeBuilder.tartaricForge(new ItemStack(ModItems.SFBLDAGGER.get()), 1000, 250, Ingredient.of(ModItems.DAGGEROFBLOODLETTING.get()), Ingredient.of(Items.NETHERITE_SCRAP), Ingredient.of(BloodMagicItems.COMMON_GEM.get()), Ingredient.of(BloodMagicItems.SENTIENT_SWORD.get())).build(consumer, new ResourceLocation(Dagger_Of_Bloodletting.MODID, forgePath + "sfbldagger"));
+        BloodAltarRecipeBuilder.altar(Ingredient.of(BloodMagicItems.SACRIFICIAL_DAGGER.get()), new ItemStack(DOBLItems.DAGGEROFBLOODLETTING.get()), AltarTier.TWO.ordinal(), 3000, 5, 5).build(consumer, new ResourceLocation(Dagger_Of_Bloodletting.MODID, altarPath + "dagger_of_bloodletting"));
+        TartaricForgeRecipeBuilder.tartaricForge(new ItemStack(DOBLItems.SFBLDAGGER.get()), 1000, 250, Ingredient.of(DOBLItems.DAGGEROFBLOODLETTING.get()), Ingredient.of(Items.NETHERITE_SCRAP), Ingredient.of(BloodMagicItems.COMMON_GEM.get()), Ingredient.of(BloodMagicItems.SENTIENT_SWORD.get())).build(consumer, new ResourceLocation(Dagger_Of_Bloodletting.MODID, forgePath + "sfbldagger"));
 
     }
 }

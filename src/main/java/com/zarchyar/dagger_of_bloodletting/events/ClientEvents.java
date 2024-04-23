@@ -1,7 +1,7 @@
 package com.zarchyar.dagger_of_bloodletting.events;
 
 import com.zarchyar.dagger_of_bloodletting.Dagger_Of_Bloodletting;
-import com.zarchyar.dagger_of_bloodletting.item.ModItems;
+import com.zarchyar.dagger_of_bloodletting.item.DOBLItems;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.ItemPropertyFunction;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,9 +21,9 @@ public class ClientEvents {
     @SuppressWarnings("deprecation")
     public static void initClientEvents(FMLClientSetupEvent event){
         event.enqueueWork(()->{
-            registerMultiWillTool(ModItems.SFBLDAGGER.get());
+            registerMultiWillTool(DOBLItems.SFBLDAGGER.get());
 
-            ItemProperties.register((Item) ModItems.SFBLDAGGER.get(), BloodMagic.rl("active"), new ItemPropertyFunction() {
+            ItemProperties.register((Item) DOBLItems.SFBLDAGGER.get(), BloodMagic.rl("active"), new ItemPropertyFunction() {
                 public float call(ItemStack stack, ClientLevel world, LivingEntity entity, int value) {
                     return ((ItemSentientSword)stack.getItem()).getActivated(stack) ? 1.0F : 0.0F;
                 }

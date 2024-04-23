@@ -1,7 +1,7 @@
 package com.zarchyar.dagger_of_bloodletting.datagen;
 
 import com.zarchyar.dagger_of_bloodletting.Dagger_Of_Bloodletting;
-import com.zarchyar.dagger_of_bloodletting.item.ModItems;
+import com.zarchyar.dagger_of_bloodletting.item.DOBLItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -15,16 +15,16 @@ import wayoftime.bloodmagic.api.compat.EnumDemonWillType;
 
 import java.util.Locale;
 
-public class ModItemModelProvider extends ItemModelProvider {
-    public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+public class DOBLItemModelProvider extends ItemModelProvider {
+    public DOBLItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Dagger_Of_Bloodletting.MODID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
-        handheldItem(ModItems.DAGGEROFBLOODLETTING);
+        handheldItem(DOBLItems.DAGGEROFBLOODLETTING);
         //handheldItem(ModItems.SOULFORGEDBLOODLETTINGDAGGER);
-        registerDemonSword(ModItems.SFBLDAGGER);
+        registerDemonSword(DOBLItems.SFBLDAGGER);
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

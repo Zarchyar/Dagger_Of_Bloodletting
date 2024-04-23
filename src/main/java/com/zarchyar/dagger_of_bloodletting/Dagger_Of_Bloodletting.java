@@ -2,8 +2,8 @@ package com.zarchyar.dagger_of_bloodletting;
 
 import com.mojang.logging.LogUtils;
 import com.zarchyar.dagger_of_bloodletting.events.ClientEvents;
-import com.zarchyar.dagger_of_bloodletting.item.ModItems;
-import com.zarchyar.dagger_of_bloodletting.recipe.ModRecipes;
+import com.zarchyar.dagger_of_bloodletting.item.DOBLItems;
+import com.zarchyar.dagger_of_bloodletting.recipe.DOBLRecipes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -28,10 +28,10 @@ public class Dagger_Of_Bloodletting {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
 
-        ModCreativeModeTabs.register(modEventBus);
-        ModItems.register(modEventBus);
+        DOBLCreativeModeTabs.register(modEventBus);
+        DOBLItems.register(modEventBus);
 
-        ModRecipes.register(modEventBus);
+        DOBLRecipes.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);

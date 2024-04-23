@@ -7,7 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModRecipes {
+public class DOBLRecipes {
     private static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Dagger_Of_Bloodletting.MODID);
     public static final RegistryObject<RecipeSerializer<OrbDaggerBindRecipe>> ORBDAGGERBINDINGSERIALIZER =

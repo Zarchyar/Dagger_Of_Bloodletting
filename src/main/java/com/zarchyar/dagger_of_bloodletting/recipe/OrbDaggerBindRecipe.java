@@ -3,7 +3,7 @@ package com.zarchyar.dagger_of_bloodletting.recipe;
 import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
 import com.zarchyar.dagger_of_bloodletting.Dagger_Of_Bloodletting;
-import com.zarchyar.dagger_of_bloodletting.item.ModItems;
+import com.zarchyar.dagger_of_bloodletting.item.DOBLItems;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
@@ -19,7 +19,7 @@ import wayoftime.bloodmagic.common.item.BloodMagicItems;
 import java.util.List;
 
 public class OrbDaggerBindRecipe extends CustomRecipe {
-    private Ingredient input = Ingredient.of(ModItems.DAGGEROFORB.get());
+    private Ingredient input = Ingredient.of(DOBLItems.DAGGEROFORB.get());
     private final Ingredient orbIngredient = Ingredient.of(BloodMagicItems.WEAK_BLOOD_ORB.get(), BloodMagicItems.APPRENTICE_BLOOD_ORB.get(), BloodMagicItems.MAGICIAN_BLOOD_ORB.get(), BloodMagicItems.MASTER_BLOOD_ORB.get(), BloodMagicItems.ARCHMAGE_BLOOD_ORB.get());
 
     public OrbDaggerBindRecipe(ResourceLocation pId, CraftingBookCategory pCategory) {
@@ -40,9 +40,7 @@ public class OrbDaggerBindRecipe extends CustomRecipe {
             }
         }
         if (list.size() == 2){
-            if ((orbIngredient.test(list.get(0)) ^ orbIngredient.test(list.get(1))) && ((input.test(list.get(0))) ^ (input.test(list.get(1))))){
-                return true;
-            }
+            return (orbIngredient.test(list.get(0)) ^ orbIngredient.test(list.get(1))) && ((input.test(list.get(0))) ^ (input.test(list.get(1))));
         }
         return false;
     }
@@ -50,7 +48,7 @@ public class OrbDaggerBindRecipe extends CustomRecipe {
     @Override
     public ItemStack assemble(CraftingContainer pContainer, RegistryAccess pRegistryAccess) {
         ItemStack orbItem = new ItemStack(BloodMagicItems.WEAK_BLOOD_ORB.get());
-        ItemStack swordItem = new ItemStack(ModItems.DAGGEROFORB.get());
+        ItemStack swordItem = new ItemStack(DOBLItems.DAGGEROFORB.get());
         Integer i = 0;
 
         for (int j = 0; j < pContainer.getContainerSize(); j++) {
