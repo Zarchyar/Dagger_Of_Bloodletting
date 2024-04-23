@@ -23,7 +23,6 @@ public class DOBLItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         handheldItem(DOBLItems.DAGGEROFBLOODLETTING);
-        //handheldItem(ModItems.SOULFORGEDBLOODLETTINGDAGGER);
         registerDemonSword(DOBLItems.SFBLDAGGER);
     }
 

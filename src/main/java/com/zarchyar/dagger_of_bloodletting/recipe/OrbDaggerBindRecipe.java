@@ -65,27 +65,27 @@ public class OrbDaggerBindRecipe extends CustomRecipe {
             if (i == 2){
                 CompoundTag swordTags = swordItem.getTag().copy();
                 if (Ingredient.of(BloodMagicItems.WEAK_BLOOD_ORB.get()).test(orbItem)){
-                    swordTags.putInt("boundorb", 0);
-                    swordItem.setTag(swordTags);
-                    return swordItem;
-                }
-                if (Ingredient.of(BloodMagicItems.APPRENTICE_BLOOD_ORB.get()).test(orbItem)){
                     swordTags.putInt("boundorb", 1);
                     swordItem.setTag(swordTags);
                     return swordItem;
                 }
-                if (Ingredient.of(BloodMagicItems.MAGICIAN_BLOOD_ORB.get()).test(orbItem)){
+                if (Ingredient.of(BloodMagicItems.APPRENTICE_BLOOD_ORB.get()).test(orbItem)){
                     swordTags.putInt("boundorb", 2);
                     swordItem.setTag(swordTags);
                     return swordItem;
                 }
-                if (Ingredient.of(BloodMagicItems.MASTER_BLOOD_ORB.get()).test(orbItem)){
+                if (Ingredient.of(BloodMagicItems.MAGICIAN_BLOOD_ORB.get()).test(orbItem)){
                     swordTags.putInt("boundorb", 3);
                     swordItem.setTag(swordTags);
                     return swordItem;
                 }
-                if (Ingredient.of(BloodMagicItems.ARCHMAGE_BLOOD_ORB.get()).test(orbItem)){
+                if (Ingredient.of(BloodMagicItems.MASTER_BLOOD_ORB.get()).test(orbItem)){
                     swordTags.putInt("boundorb", 4);
+                    swordItem.setTag(swordTags);
+                    return swordItem;
+                }
+                if (Ingredient.of(BloodMagicItems.ARCHMAGE_BLOOD_ORB.get()).test(orbItem)){
+                    swordTags.putInt("boundorb", 5);
                     swordItem.setTag(swordTags);
                     return swordItem;
                 }

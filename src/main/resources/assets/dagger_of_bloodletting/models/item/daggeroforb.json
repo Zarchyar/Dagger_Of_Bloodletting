@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dagger_of_bloodletting:item/daggeroforb"
+  },
+  "overrides": [
+    {
+      "model": "dagger_of_bloodletting:item/variants/daggeroforb_0",
+      "predicate": {
+        "dagger_of_bloodletting:boundorb": 1
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/daggeroforb_1",
+      "predicate": {
+        "dagger_of_bloodletting:boundorb": 2
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/daggeroforb_2",
+      "predicate": {
+        "dagger_of_bloodletting:boundorb": 3
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/daggeroforb_3",
+      "predicate": {
+        "dagger_of_bloodletting:boundorb": 4
+      }
+    },
+    {
+      "model": "dagger_of_bloodletting:item/variants/daggeroforb_4",
+      "predicate": {
+        "dagger_of_bloodletting:boundorb": 5
+      }
+    }
+  ]
+}
