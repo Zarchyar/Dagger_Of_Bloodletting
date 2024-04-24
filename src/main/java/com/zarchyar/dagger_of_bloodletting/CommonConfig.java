@@ -27,7 +27,7 @@ public class CommonConfig {
             .comment("This value is the max LP a Weak Blood Orb bound Dagger of the Orb can add to your network.")
             .defineInRange("weakBloodOrbDaggerCapacity", 5000, 0, Integer.MAX_VALUE);
     private static final ForgeConfigSpec.IntValue APPRENTICEBOCAPACITY = BUILDER
-            .comment("This value is the max LP a Apprentice Blood Orb bound Dagger of the Orb can add to your network.")
+            .comment("This value is the max LP an Apprentice Blood Orb bound Dagger of the Orb can add to your network.")
             .defineInRange("apprenticeBloodOrbDaggerCapacity", 25000, 0, Integer.MAX_VALUE);
     private static final ForgeConfigSpec.IntValue MAGICIANBOCAPACITY = BUILDER
             .comment("This value is the max LP a Magician Blood Orb bound Dagger of the Orb can add to your network.")
