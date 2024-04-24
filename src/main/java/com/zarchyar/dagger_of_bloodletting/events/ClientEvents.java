@@ -34,12 +34,14 @@ public class ClientEvents {
                 @Override
                 public float call(ItemStack pStack, @Nullable ClientLevel pLevel, @Nullable LivingEntity pEntity, int pSeed) {
                     Integer tagValue = pStack.getTag().getInt("boundorb");
-                    if (tagValue == 1) return 1;
-                    if (tagValue == 2) return 2;
-                    if (tagValue == 3) return 3;
-                    if (tagValue == 4) return 4;
-                    if (tagValue == 5) return 5;
-                    return 0;
+                    return switch (tagValue) {
+                        case 1 -> 1;
+                        case 2 -> 2;
+                        case 3 -> 3;
+                        case 4 -> 4;
+                        case 5 -> 5;
+                        default -> 0;
+                    };
                 }
             });
         });
