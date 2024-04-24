@@ -22,5 +22,6 @@ public class DOBLCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(DOBLItems.DAGGEROFBLOODLETTING.get());
                         output.accept(DOBLItems.SFBLDAGGER.get());
+                        output.accept(DOBLItems.DAGGEROFORB.get());
                     }).build());
 }
