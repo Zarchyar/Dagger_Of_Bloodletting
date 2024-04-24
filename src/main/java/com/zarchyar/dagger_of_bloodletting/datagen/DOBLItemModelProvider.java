@@ -24,6 +24,7 @@ public class DOBLItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         handheldItem(DOBLItems.DAGGEROFBLOODLETTING);
         registerDemonSword(DOBLItems.SFBLDAGGER);
+        simpleItem(DOBLItems.BLADEOFBLOODLETTING);
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
@@ -45,5 +46,10 @@ public class DOBLItemModelProvider extends ItemModelProvider {
                 builder = builder.override().predicate(BloodMagic.rl("type"), type.ordinal()).predicate(BloodMagic.rl("active"), i).model(willFile).end();
             }
         }
+    }
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Dagger_Of_Bloodletting.MODID, "item/" + item.getId().getPath()));
     }
 }

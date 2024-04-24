@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_daggerofbloodletting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dagger_of_bloodletting:daggerofbloodletting"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dagger_of_bloodletting:bladeofbloodletting_from_blasting_daggerofbloodletting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_daggerofbloodletting",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dagger_of_bloodletting:bladeofbloodletting_from_blasting_daggerofbloodletting"
+    ]
+  },
+  "sends_telemetry_event": false
+}
