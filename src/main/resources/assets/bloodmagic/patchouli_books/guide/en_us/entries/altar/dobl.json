@@ -1,0 +1,35 @@
+{
+  "name": "Dagger Of Bloodletting",
+  "icon": "dagger_of_bloodletting:daggerofbloodletting",
+  "category": "bloodmagic:altar",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Dagger of Bloodletting$() and its variants are alternatives to generating $(blood)LP$(). The normal variant mostly acts like an iron sword until it is used near a blood altar. When used to harm mobs near a blood altar an amount of $(blood)LP$() will be generated based off the amount of damage you deal to the mob(s) in question, this also respects the $(blood)LP$() multipliers from blood magics config. By default the item hase a 1x multiplier to $(blood)LP$() generated but this can be changed in the config."
+    },
+    {
+      "type": "bloodmagic:crafting_altar",
+      "heading": "Dagger of Bloodletting",
+      "recipe": "dagger_of_bloodletting:altar/dagger_of_bloodletting"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Sentient Dagger of Bloodletting$() is a specialized version of the $(item)Dagger of Bloodletting$() that also inherits the properties of the $(l:bloodmagic:demon_will/demonic_items/sentient_sword)Sentient Sword$(/l). This additional power comes at a cost the item will produce 20% less $(blood)LP$() then the default variant (by default unless changed in the config)."
+    },
+    {
+      "type": "bloodmagic:crafting_soulforge",
+      "heading": "Sentient Dagger of Bloodletting",
+      "recipe": "dagger_of_bloodletting:soulforge/sfbldagger"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Dagger of the Orb$() is a variant of the $(item)Dagger of Bloodletting$(), which instead of filling a nearby Alter, fills the $(item)Orb$() you have bound to it. To bind an $(item)Orb$() to the $(item)Dagger$() place the Orb and the Dagger in the crafting grid. You can rebind the $(item)Dagger$() to a new $(item)Orb$() latter to change the max $(blood)LP$() that the dagger can add to your $(l:bloodmagic:altar/soul_network)Soul Network$(). Additionally the dagger must be bound to your $(l:bloodmagic:altar/soul_network)Soul Network$() by pressing [$(k:use)] while holding the item."
+    },
+    {
+      "type": "bloodmagic:crafting_alchemy_table",
+      "heading": "Dagger of the Orb",
+      "recipe": "dagger_of_bloodletting:dagger_of_the_orb",
+      "text": "By default the daggers max $(blood)LP$() input is the same as the orb tier currently bound, additionally the item will produce 50% less $(blood)LP$() then the default variant(by default unless changed in the config)."
+    }
+  ]
+}
