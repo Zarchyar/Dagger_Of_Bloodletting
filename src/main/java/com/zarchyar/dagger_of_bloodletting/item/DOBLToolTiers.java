@@ -16,6 +16,6 @@ public class DOBLToolTiers {
     public static final Tier BLOODLETTING = TierSortingRegistry.registerTier(
             new ForgeTier(2, 500, 6.0F, 2.0F, 20,
                     BlockTags.NEEDS_IRON_TOOL, ()-> {return Ingredient.of(BloodMagicItems.IMBUED_SLATE.get());}),
-            new ResourceLocation(Dagger_Of_Bloodletting.MODID, "bloodletting"), List.of(Tiers.IRON), List.of(Tiers.DIAMOND)
+            new ResourceLocation(Dagger_Of_Bloodletting.MODID, "bloodletting"), List.of(Tiers.STONE), List.of(Tiers.DIAMOND)
     );
 }
