@@ -32,7 +32,7 @@ public class DaggerOfOrbItem extends SwordItem {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        Double soulfillingAmount = switch (stack.getTag() != null ? stack.getTag().getInt("boundorb") : 0) {
+        double soulfillingAmount = switch (stack.getTag() != null ? stack.getTag().getInt("boundorb") : 0) {
             case 1 -> CommonConfig.weakbocapacity;
             case 2 -> CommonConfig.apprenticebocapacity;
             case 3 -> CommonConfig.magicianbocapacity;

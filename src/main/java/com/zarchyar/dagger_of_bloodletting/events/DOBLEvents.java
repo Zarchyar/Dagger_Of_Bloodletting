@@ -31,10 +31,10 @@ public class DOBLEvents {
         @SubscribeEvent
         public static void entityAttributeModificationEvent (EntityAttributeModificationEvent event) {
             if (!event.has(EntityType.PLAYER, BLOODLETTING.get())) {
-                event.add(EntityType.PLAYER, BLOODLETTING.get(), 0.0);
+                event.add(EntityType.PLAYER, BLOODLETTING.get());
             }
             if (!event.has(EntityType.PLAYER, SOULFILLING.get())) {
-                event.add(EntityType.PLAYER, SOULFILLING.get(), 0.0);
+                event.add(EntityType.PLAYER, SOULFILLING.get());
             }
         }
     }
@@ -46,28 +46,29 @@ public class DOBLEvents {
             if (event.getSource().getEntity() instanceof Player player) {
                 LivingEntity pTarget = event.getEntity();
                 ResourceLocation id = ForgeRegistries.ENTITY_TYPES.getKey(pTarget.getType());
-                int lifeEssenceRatio = (int) BloodMagicAPI.INSTANCE.getValueManager().getSacrificial().getOrDefault(id, 25);
-                if (!(lifeEssenceRatio <= 0)){
-                    boolean playSound;
-                    int lifeEssence = (int)((float)lifeEssenceRatio * event.getAmount());
-                    if (event.getEntity().isBaby()) {
-                        lifeEssence = (int)((float)lifeEssence * 0.5F);
-                    }
+                float lifeEssenceRatio = BloodMagicAPI.INSTANCE.getValueManager().getSacrificial().getOrDefault(id, 25);
+                if (lifeEssenceRatio > 0){
+                    boolean playSound = false;
+                    float lifeEssence = lifeEssenceRatio * event.getAmount();
+                    lifeEssence *= event.getEntity().isBaby() ? 0.5f : 1;
                     ItemStack mainHandItem = player.getMainHandItem();
 
                     AttributeInstance bloodlettingInstance = player.getAttribute(BLOODLETTING.get());
                     AttributeInstance soulfillingInstance = player.getAttribute(SOULFILLING.get());
 
-                    Double bloodlettingMULTI = bloodlettingInstance == null ? 0 : Math.max(0, bloodlettingInstance.getValue());
+                    double bloodlettingMULTI = bloodlettingInstance == null ? 0 : Math.max(0, bloodlettingInstance.getValue());
                     int soulfillingCap = soulfillingInstance == null ? 0 : Math.max(0, (int) soulfillingInstance.getValue());
                     SoulNetwork ownerNetwork = NetworkHelper.getSoulNetwork(player);
 
-                    lifeEssence = (int)((float)lifeEssence * bloodlettingMULTI);
+                    lifeEssence = (float) (lifeEssence * bloodlettingMULTI);
 
-                    int networkAdded = ownerNetwork.add(SoulTicket.item(mainHandItem, player.getCommandSenderWorld(), player, lifeEssence), soulfillingCap);
-                    lifeEssence -= networkAdded;
+                    if (soulfillingCap > 0) {
+                        int networkAdded = ownerNetwork.add(SoulTicket.item(mainHandItem, player.getCommandSenderWorld(), player, ((int) lifeEssence)), soulfillingCap);
+                        lifeEssence -= networkAdded;
+                        playSound = networkAdded != 0;
+                    }
 
-                    playSound = ((lifeEssence > 0 && (PlayerSacrificeHelper.findAndFillAltar(player.getCommandSenderWorld(), pTarget, lifeEssence, true))) || networkAdded != 0);
+                    playSound = ((lifeEssence > 0 && (PlayerSacrificeHelper.findAndFillAltar(player.getCommandSenderWorld(), pTarget, ((int) lifeEssence), true))) || playSound);
 
                     if (playSound) pTarget.getCommandSenderWorld().playSound((Player)null, pTarget.getX(), pTarget.getY(), pTarget.getZ(), SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (pTarget.getCommandSenderWorld().random.nextFloat() - pTarget.getCommandSenderWorld().random.nextFloat()) * 0.8F);
                 }

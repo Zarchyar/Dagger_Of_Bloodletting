@@ -15,6 +15,8 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import wayoftime.bloodmagic.common.item.BloodMagicItems;
+import wayoftime.bloodmagic.common.item.BloodOrb;
+import wayoftime.bloodmagic.common.item.ItemBloodOrb;
 
 import java.util.List;
 
@@ -36,7 +38,6 @@ public class OrbDaggerBindRecipe extends CustomRecipe {
             ItemStack itemStack = pContainer.getItem(i);
             if (!itemStack.isEmpty()){
                 list.add(itemStack);
-                if (list.size() > 2) {return false;}
             }
         }
         if (list.size() == 2){
@@ -47,49 +48,30 @@ public class OrbDaggerBindRecipe extends CustomRecipe {
 
     @Override
     public ItemStack assemble(CraftingContainer pContainer, RegistryAccess pRegistryAccess) {
-        ItemStack orbItem = new ItemStack(BloodMagicItems.WEAK_BLOOD_ORB.get());
+        ItemStack orbItem = new ItemStack(ItemStack.EMPTY.getItem());
         ItemStack swordItem = new ItemStack(DOBLItems.DAGGEROFORB.get());
-        Integer i = 0;
+        int i = 0;
 
         for (int j = 0; j < pContainer.getContainerSize(); j++) {
             ItemStack itemStack = pContainer.getItem(j);
             if (!itemStack.isEmpty()) {
                 i++;
                 if (orbIngredient.test(itemStack)){
-                    orbItem = itemStack;
+                    orbItem = itemStack.copy();
                 }
                 if (input.test(itemStack)){
                     swordItem = itemStack.copy();
                 }
             }
-            if (i == 2){
-                CompoundTag swordTags = swordItem.getTag().copy();
-                if (Ingredient.of(BloodMagicItems.WEAK_BLOOD_ORB.get()).test(orbItem)){
-                    swordTags.putInt("boundorb", 1);
-                    swordItem.setTag(swordTags);
-                    return swordItem;
-                }
-                if (Ingredient.of(BloodMagicItems.APPRENTICE_BLOOD_ORB.get()).test(orbItem)){
-                    swordTags.putInt("boundorb", 2);
-                    swordItem.setTag(swordTags);
-                    return swordItem;
-                }
-                if (Ingredient.of(BloodMagicItems.MAGICIAN_BLOOD_ORB.get()).test(orbItem)){
-                    swordTags.putInt("boundorb", 3);
-                    swordItem.setTag(swordTags);
-                    return swordItem;
-                }
-                if (Ingredient.of(BloodMagicItems.MASTER_BLOOD_ORB.get()).test(orbItem)){
-                    swordTags.putInt("boundorb", 4);
-                    swordItem.setTag(swordTags);
-                    return swordItem;
-                }
-                if (Ingredient.of(BloodMagicItems.ARCHMAGE_BLOOD_ORB.get()).test(orbItem)){
-                    swordTags.putInt("boundorb", 5);
-                    swordItem.setTag(swordTags);
-                    return swordItem;
-                }
-            }
+        }
+
+        CompoundTag swordTags = swordItem.getTag() != null ? swordItem.getTag().copy(): new CompoundTag();
+        if(i != 2) return swordItem;
+        BloodOrb orb = ((ItemBloodOrb) orbItem.getItem()).getOrb(orbItem);
+        int orbTier = orb == null ? 0 : orb.getTier();
+        if (orbTier < 6 ){
+            swordTags.putInt("boundorb", orbTier);
+            swordItem.setTag(swordTags);
         }
         return swordItem;
     }
