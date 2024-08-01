@@ -23,31 +23,31 @@ public class CommonConfig {
             .comment("Multiplier to the amount of lp created by the Dagger of the Orb")
             .comment("Values less than 1 will result in less LP, values greater than 1 result in more LP.")
             .defineInRange("orbDaggerLPMulti", 0.5D, 0.0D, Double.MAX_VALUE);
-    private static final ForgeConfigSpec.IntValue WEAKBOCAPACITY = BUILDER
+    private static final ForgeConfigSpec.DoubleValue WEAKBOCAPACITY = BUILDER
             .comment("This value is the max LP a Weak Blood Orb bound Dagger of the Orb can add to your network.")
-            .defineInRange("weakBloodOrbDaggerCapacity", 5000, 0, Integer.MAX_VALUE);
-    private static final ForgeConfigSpec.IntValue APPRENTICEBOCAPACITY = BUILDER
+            .defineInRange("weakBloodOrbDaggerCapacity", 5000, 0, Double.MAX_VALUE);
+    private static final ForgeConfigSpec.DoubleValue APPRENTICEBOCAPACITY = BUILDER
             .comment("This value is the max LP an Apprentice Blood Orb bound Dagger of the Orb can add to your network.")
-            .defineInRange("apprenticeBloodOrbDaggerCapacity", 25000, 0, Integer.MAX_VALUE);
-    private static final ForgeConfigSpec.IntValue MAGICIANBOCAPACITY = BUILDER
+            .defineInRange("apprenticeBloodOrbDaggerCapacity", 25000, 0, Double.MAX_VALUE);
+    private static final ForgeConfigSpec.DoubleValue MAGICIANBOCAPACITY = BUILDER
             .comment("This value is the max LP a Magician Blood Orb bound Dagger of the Orb can add to your network.")
-            .defineInRange("magicianBloodOrbDaggerCapacity", 150000, 0, Integer.MAX_VALUE);
-    private static final ForgeConfigSpec.IntValue MASTERBOCAPACITY = BUILDER
+            .defineInRange("magicianBloodOrbDaggerCapacity", 150000, 0, Double.MAX_VALUE);
+    private static final ForgeConfigSpec.DoubleValue MASTERBOCAPACITY = BUILDER
             .comment("This value is the max LP a Master Blood Orb bound Dagger of the Orb can add to your network.")
-            .defineInRange("masterBloodOrbDaggerCapacity", 1000000, 0, Integer.MAX_VALUE);
-    private static final ForgeConfigSpec.IntValue ARCHMAGEBOCAPACITY = BUILDER
+            .defineInRange("masterBloodOrbDaggerCapacity", 1000000, 0, Double.MAX_VALUE);
+    private static final ForgeConfigSpec.DoubleValue ARCHMAGEBOCAPACITY = BUILDER
             .comment("This value is the max LP an Archmage Blood Orb bound Dagger of the Orb can add to your network.")
-            .defineInRange("archmageBloodOrbDaggerCapacity", 10000000, 0, Integer.MAX_VALUE);
+            .defineInRange("archmageBloodOrbDaggerCapacity", 10000000, 0, Double.MAX_VALUE);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
     public static Double lpmulti;
     public static Double slpmulti;
     public static Double doolpmulti;
-    public static int weakbocapacity;
-    public static int apprenticebocapacity;
-    public static int magicianbocapacity;
-    public static int masterbocapacity;
-    public static int archmagebocapacity;
+    public static Double weakbocapacity;
+    public static Double apprenticebocapacity;
+    public static Double magicianbocapacity;
+    public static Double masterbocapacity;
+    public static Double archmagebocapacity;
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event){

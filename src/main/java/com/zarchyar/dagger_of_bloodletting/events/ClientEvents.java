@@ -9,6 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -21,6 +22,7 @@ import static wayoftime.bloodmagic.client.ClientEvents.registerMultiWillTool;
 @Mod.EventBusSubscriber(value = Dist.CLIENT, modid = Dagger_Of_Bloodletting.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientEvents {
     @SuppressWarnings("deprecation")
+    @SubscribeEvent
     public static void initClientEvents(FMLClientSetupEvent event){
         event.enqueueWork(()->{
             registerMultiWillTool(DOBLItems.SFBLDAGGER.get());

@@ -17,10 +17,10 @@ public class DOBLItems {
     }
 
     public static final RegistryObject<Item> DAGGEROFBLOODLETTING = ITEMS.register("daggerofbloodletting",
-            ()-> new SwordItem(DOBLToolTiers.BLOODLETTING, 3, -2.4F, new Item.Properties()));
+            ()-> new DaggerOfBloodlettingItem(DOBLToolTiers.BLOODLETTING, 3, -2.4F, new Item.Properties()));
 
     public static final RegistryObject<Item> SFBLDAGGER = ITEMS.register("sfbldagger",
-            ()-> new ItemSentientSword());
+            SentientDOBLItem::new);
 
     public static final RegistryObject<Item> DAGGEROFORB = ITEMS.register("daggeroforb",
             ()-> new DaggerOfOrbItem(DOBLToolTiers.BLOODLETTING, 3, -2.4F, new Item.Properties()));
