@@ -23,13 +23,21 @@
     },
     {
       "type": "patchouli:text",
-      "text": "The $(item)Dagger of the Orb$() is a variant of the $(item)Dagger of Bloodletting$(), which instead of filling a nearby Alter, fills the $(item)Orb$() you have bound to it. To bind an $(item)Orb$() to the $(item)Dagger$() place the Orb and the Dagger in the crafting grid. You can rebind the $(item)Dagger$() to a new $(item)Orb$() latter to change the max $(blood)LP$() that the dagger can add to your $(l:bloodmagic:altar/soul_network)Soul Network$(). Additionally the dagger must be bound to your $(l:bloodmagic:altar/soul_network)Soul Network$() by pressing [$(k:use)] while holding the item."
+      "text": "The $(item)Dagger of the Orb$() is a variant of the $(item)Dagger of Bloodletting$(), which instead of filling a nearby Alter, fills the $(item)Orb$() you have bound to it. To bind an $(item)Orb$() to the $(item)Dagger$() place the Orb and the Dagger in the crafting grid. You can rebind the $(item)Dagger$() to a new $(item)Orb$() latter to change the max $(blood)LP$() that the dagger can add to your $(l:bloodmagic:altar/soul_network)Soul Network$(). If your network has filled up the remaining lp will attempt to add itself into an altar similar to the other 2 Daggers."
     },
     {
       "type": "bloodmagic:crafting_alchemy_table",
       "heading": "Dagger of the Orb",
       "recipe": "dagger_of_bloodletting:dagger_of_the_orb",
       "text": "By default the daggers max $(blood)LP$() input is the same as the orb tier currently bound, additionally the item will produce 50% less $(blood)LP$() then the default variant(by default unless changed in the config)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Following is a bit more technical talk largely for pack devs or those that are curious. The power of the blades is handled via a set of attributes. Which means that the amount of lp you can store in your network (like how the Dagger of the orb dose) or the amount of lp the item generates can be changed by other equipment if implemented. For instance a pack dev might choose to add a chest plate that makes it so your Bloodletting is 50% more. Neat part is with this means you could have an armor piece or curio or any other means to apply an attribute make all attacks create LP."
+    },
+    {
+      "type":"patchouli:text",
+      "text": "Bloodletting(dagger_of_bloodletting:bloodletting) is a multiplier to how much lp is generated per damage(LP generated calculated as: Bloodletting * Damage Done * Mobs LP per HP) if you have 0 bloodletting means you'll make 0 LP from your attacks. Soulcap(dagger_of_bloodletting:soulfilling) is the cap on lp that can be in your network for your attacks to add lp. If you where to add more lp then what could fit in the network leftover lp will then try to fill a nearby altar if possible. Additionally, this attribute will do nothing if you have 0 Bloodletting. 1 Soulcap = +1 to the max LP that can be pushed to your Soul Network."
     }
   ]
 }
