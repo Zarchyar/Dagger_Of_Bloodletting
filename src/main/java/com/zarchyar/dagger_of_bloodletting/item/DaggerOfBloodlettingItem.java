@@ -11,7 +11,6 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 
 import static com.zarchyar.dagger_of_bloodletting.DOBLAttributes.BLOODLETTING;
-import static com.zarchyar.dagger_of_bloodletting.DOBLAttributes.SOULFILLING;
 
 public class DaggerOfBloodlettingItem extends SwordItem {
     public DaggerOfBloodlettingItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
