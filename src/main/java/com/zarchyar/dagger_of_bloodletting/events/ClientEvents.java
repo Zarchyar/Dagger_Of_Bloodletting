@@ -35,11 +35,11 @@ public class ClientEvents {
             ItemProperties.register(DOBLItems.DAGGEROFORB.get(), new ResourceLocation(Dagger_Of_Bloodletting.MODID, "boundorb"), new ItemPropertyFunction() {
                 @Override
                 public float call(ItemStack pStack, @Nullable ClientLevel pLevel, @Nullable LivingEntity pEntity, int pSeed) {
-                    try {
-                        return Math.min(pStack.getTag().getInt("boundorb"), 0);
-                    } catch (Exception e) {
-                        return 0;
+
+                    if (pStack.getTag() != null) {
+                        return Math.max(pStack.getTag().getInt("boundorb"), 0);
                     }
+                    return 0;
                 }
             });
         });
